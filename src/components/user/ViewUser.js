@@ -8,8 +8,8 @@ const ViewUser = () => {
     const { userId } = useParams();//it will grab the userId value from url and return that
     const initialState = { name: "", username: "", email: "", phone: "", website: "" };
     const [user, setUser] = useState(initialState)
-    const [address, setAddress] = useState({})
-    const [company, setCompany] = useState({})
+//     const [address, setAddress] = useState({})
+//     const [company, setCompany] = useState({})
 
     useEffect(() => {
         fetchUser();//wil call only once on page load as we have passed empty dependency array
@@ -19,8 +19,8 @@ const ViewUser = () => {
         const response = await axios.get(`http://localhost:5000/users/${userId}`);
         console.log(response.data);
         setUser(response.data);
-        setAddress(response.data.address)
-        setCompany(response.data.company)
+//         setAddress(response.data.address)
+//         setCompany(response.data.company)
     }
 
     return (
